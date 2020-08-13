@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="dev.juara.ocrktp.TakeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/mode_take"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:constraint_referenced_ids="corner1,corner2,corner3,corner4,space1,space2,space3,space4,square_top,square_end,square_bottom,square_start,tv_take,iv_photo,btn_lamp,button_take_picture" />
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/square"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="85.60:53.98"
+            app:layout_constraintEnd_toStartOf="@id/button_take_picture"
+            app:layout_constraintStart_toEndOf="@id/btn_close"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/square_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#73000000"
+            app:layout_constraintBottom_toTopOf="@id/square"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <View
+            android:id="@+id/square_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#73000000"
+            app:layout_constraintBottom_toBottomOf="@id/square"
+            app:layout_constraintEnd_toStartOf="@id/square"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/square" />
+
+        <View
+            android:id="@+id/square_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#73000000"
+            app:layout_constraintBottom_toBottomOf="@id/square"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/square"
+            app:layout_constraintTop_toTopOf="@id/square" />
+
+        <View
+            android:id="@+id/square_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#73000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/square" />
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginEnd="30dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_photo"
+            app:layout_constraintBottom_toBottomOf="@id/square"
+            app:layout_constraintEnd_toEndOf="@id/square"
+            app:layout_constraintTop_toTopOf="@id/square" />
+
+        <Space
+            android:id="@+id/space1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            app:layout_constraintBottom_toTopOf="@id/square"
+            app:layout_constraintEnd_toStartOf="@id/square" />
+
+        <ImageView
+            android:id="@+id/corner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_linescan"
+            app:layout_constraintStart_toEndOf="@id/space1"
+            app:layout_constraintTop_toBottomOf="@id/space1" />
+
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            app:layout_constraintBottom_toTopOf="@id/square"
+            app:layout_constraintStart_toEndOf="@id/square" />
+
+        <ImageView
+            android:id="@+id/corner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="-1"
+            android:src="@drawable/ic_linescan"
+            app:layout_constraintEnd_toStartOf="@id/space2"
+            app:layout_constraintTop_toBottomOf="@id/space2" />
+
+        <Space
+            android:id="@+id/space3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            app:layout_constraintEnd_toStartOf="@id/square"
+            app:layout_constraintTop_toBottomOf="@id/square" />
+
+        <ImageView
+            android:id="@+id/corner3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleY="-1"
+            android:src="@drawable/ic_linescan"
+            app:layout_constraintBottom_toTopOf="@id/space3"
+            app:layout_constraintStart_toEndOf="@id/space3" />
+
+        <Space
+            android:id="@+id/space4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            app:layout_constraintStart_toEndOf="@id/square"
+            app:layout_constraintTop_toBottomOf="@id/square" />
+
+        <ImageView
+            android:id="@+id/corner4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="-1"
+            android:scaleY="-1"
+            android:src="@drawable/ic_linescan"
+            app:layout_constraintBottom_toTopOf="@id/space4"
+            app:layout_constraintEnd_toStartOf="@id/space4" />
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="74dp"
+            android:layout_height="70dp"
+            android:background="@null"
+            android:src="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_take"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mohon posisikan kartu di sini.\nKlik layar untuk memperjelas foto."
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/square"
+            app:layout_constraintEnd_toStartOf="@id/iv_photo"
+            app:layout_constraintStart_toStartOf="@id/square"
+            app:layout_constraintTop_toTopOf="@id/square" />
+
+        <ImageButton
+            android:id="@+id/button_take_picture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:src="@drawable/ic_capture"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_save"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_save"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_lamp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_lampu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Gagal mendapatkan NIK\nSilakan coba lagi."
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.loading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
